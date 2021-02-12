@@ -34,7 +34,7 @@ img {
     align-items: center;
   }
   &__canvas {
-    width: 550px;
+    width: 1000px;
     height: 550px;
     background: #fff;
     border-radius: 4px;
@@ -92,4 +92,55 @@ img {
 
 .active-color {
   border: 2px solid #005E80;
+}
+
+@media (max-width: 1050px) {
+  .wrapper {
+    &__canvas {
+      width: 800px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .wrapper {
+    &__canvas {
+      width: 600px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .wrapper {
+    &__canvas {
+      width: 400px;
+    }
+    &__btns {
+      flex-direction: column;
+      &-item {
+        &:not(:last-child) {
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .wrapper {
+    &__canvas {
+      width: 320px;
+    }
+    &__colors {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  .wrapper {
+    &__canvas {
+      width: 250px;
+    }
+  }
 }

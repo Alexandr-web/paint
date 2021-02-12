@@ -127,6 +127,17 @@ const paint = () => {
 
   saveImage();
 
+  const erasering = () => {
+    const btn = document.querySelector('.wrapper__btns-item[data-btn="eraser"]');
+
+    btn.addEventListener('click', () => {
+      obj_line.color = '#ffffff';
+      setSettingsLine();
+    });
+  }
+
+  erasering();
+
   function setSettingsLine() {
     const canvas = document.querySelector('.wrapper__canvas');
     const ctx = canvas.getContext('2d');
