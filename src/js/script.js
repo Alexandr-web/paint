@@ -22,11 +22,10 @@ const paint = () => {
   const moveOnCasnvas = () => {
     const canvas = document.querySelector('.wrapper__canvas');
     const ctx = canvas.getContext('2d');
-    const height_canvas = window.getComputedStyle(canvas).height.replace(/px/, '');
-    const width_canvas = window.getComputedStyle(canvas).width.replace(/px/, '');
 
-    canvas.height = height_canvas;
-    canvas.width = width_canvas;
+    window.addEventListener('resize', setSizesCanvas);
+
+    setSizesCanvas();
 
     canvas.addEventListener('mousemove', e => {
       const x = e.offsetX;
@@ -138,12 +137,24 @@ const paint = () => {
 
   erasering();
 
+  function setSizesCanvas() {
+    const procent = 80;
+    const canvas = document.querySelector('.wrapper__canvas');
+    const width_window = document.documentElement.clientWidth;
+    const height_canvas = window.getComputedStyle(canvas).height.replace(/px/, '');
+    const width_canvas = width_window * procent / 100;
+
+    canvas.height = height_canvas;
+    canvas.width = width_canvas;
+    canvas.style.width = `${width_canvas}px`;
+  }
+
   function setSettingsLine() {
     const canvas = document.querySelector('.wrapper__canvas');
     const ctx = canvas.getContext('2d');
 
     ctx.lineWidth = obj_line.width;      
-    ctx.strokeStyle = obj_line.color;  
+    ctx.strokeStyle = obj_line.color;
   }
 }
 

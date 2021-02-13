@@ -6,5 +6,10 @@ export default [
   '#4DD96D',
   '#000000',
   '#ffffff',
-  '#D94540'
+  '#D94540',
+  'red',
+  'orange',
+  'blue',
+  'green',
+  'yellow'
 ];
